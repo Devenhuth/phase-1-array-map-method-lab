@@ -12,5 +12,15 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const newArr = tutorials.map ((tutorial) => {
+    return tutorial.split(' ') // getting arrays containing each word byself 
+    })
+  
+  return newArr.map(first => {
+    return first.map(word => {
+     return word[0].toUpperCase() + word.substring(1) // caps first letter of the array
+    }).join(' ') //rejoins the strings into one array
+ })
 }
+
+ titleCased(tutorials)
